@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>I Love You Animation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeToHeart {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      51% {
+        content: "I ❤️ U";
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .love-text::after {
+      content: "I Love You";
+      animation: changeText 4s infinite;
+      display: inline-block;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    @keyframes changeText {
+      0%, 40% {
+        content: "I Love You";
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      60%, 100% {
+        content: "I ❤️ U";
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-pink-500 via-red-400 to-purple-500 flex items-center justify-center min-h-screen">
+
+  <div class="text-center p-4">
+    <h1 class="love-text text-5xl sm:text-6xl md:text-7xl transition-all duration-1000 ease-in-out"></h1>
+  </div>
+
+</body>
+</html>
